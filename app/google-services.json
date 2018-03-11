@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "920209874756",
+    "firebase_url": "https://virtual-fence-2cd3a.firebaseio.com",
+    "project_id": "virtual-fence-2cd3a",
+    "storage_bucket": "virtual-fence-2cd3a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:920209874756:android:60b6baf1f9a1dc16",
+        "android_client_info": {
+          "package_name": "io.atthack.theftdeterent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "920209874756-lb90q1qrrma02d2el909533fa7b72nib.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.atthack.theftdeterent",
+            "certificate_hash": "5f0c585a395c2e607ec284a98be5467a998203ef"
+          }
+        },
+        {
+          "client_id": "920209874756-4lv91h8bt2peorbnn5k8msvqj3lu93be.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDY90DWLkUzQXRStM-uu8pD59ZzxofZyC4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "920209874756-4lv91h8bt2peorbnn5k8msvqj3lu93be.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.ImageFormat;
@@ -82,38 +83,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     SoundPool mSoundPool;
     CameraManager mCameraManager;
     List<Surface> mCameraOutputs;
-    SurfaceView mSurfaceView;
+//    SurfaceView mSurfaceView;
     private String mCameraId;
     private AutoFitTextureView mTextureView;
     private CameraCaptureSession mCaptureSession;
-    /**
-     * A reference to the opened {@link CameraDevice}.
-     */
     private CameraDevice mCameraDevice;
-    /**
-     * The {@link android.util.Size} of camera preview.
-     */
     private Size mPreviewSize;
-    /**
-     * An additional thread for running tasks that shouldn't block the UI.
-     */
     private HandlerThread mBackgroundThread;
-    /**
-     * A {@link Handler} for running tasks in the background.
-     */
     private Handler mBackgroundHandler;
-    /**
-     * An {@link ImageReader} that handles still image capture.
-     */
     private ImageReader mImageReader;
-    /**
-     * This is the output file for our picture.
-     */
     private File mFile;
-    /**
-     * This a callback object for the {@link ImageReader}. "onImageAvailable" will be called when a
-     * still image is ready to be saved.
-     */
     private final ImageReader.OnImageAvailableListener mOnImageAvailableListener
             = new ImageReader.OnImageAvailableListener() {
 
@@ -294,26 +273,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mFile = new File(getExternalFilesDir(null), "pic.png");
         findViewById(R.id.picture).setOnClickListener(this);
         findViewById(R.id.info).setOnClickListener(this);
-        mCameraOutputs = new ArrayList<>();
-        mSurfaceView = findViewById(R.id.surface_view);
-        mCameraOutputs.add(mSurfaceView.getHolder().getSurface());
-        mSurfaceView.getHolder().addCallback(new SurfaceHolder.Callback() {
-            @Override
-            public void surfaceCreated(SurfaceHolder holder) {
-                takePicture();
-            }
-
-            @Override
-            public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-
-            }
-
-            @Override
-            public void surfaceDestroyed(SurfaceHolder holder) {
-
-            }
-        });
-        mCameraManager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
+//        mCameraOutputs = new ArrayList<>();
+//        mCameraOutputs.add(mSurfaceView.getHolder().getSurface());
+//        mSurfaceView.getHolder().addCallback(new SurfaceHolder.Callback() {
+//            @Override
+//            public void surfaceCreated(SurfaceHolder holder) {
+//                takePicture();
+//            }
+//
+//            @Override
+//            public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
+//
+//            }
+//
+//            @Override
+//            public void surfaceDestroyed(SurfaceHolder holder) {
+//
+//            }
+//        });
+//        mCameraManager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
     }
 
     @Override
@@ -1023,4 +1001,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    @Override
+    protected void onNewIntent(Intent intent) {
+        Log.d(TAG, "New Intent received");
+        super.onNewIntent(intent);
+    }
 }
